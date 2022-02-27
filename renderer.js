@@ -44,6 +44,14 @@ const data = [
     position: "center", // position of image: 'left' | 'center' | 'right'
     width: "auto", // width of image in px; default: auto
     height: "60px", // width of image in px; default: 50 or '50px'
+    sectionStyle: {
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    attributes: {
+      width: '100px',
+      height: '100px',
+    },
   },
   {
     type: "text", // 'text' | 'barCode' | 'qrCode' | 'image' | 'table'
@@ -72,12 +80,231 @@ const data = [
     style: "margin-left:50px",
   },
   {
+    type:     'table',
+    header: [ 'Item', 'Price' ],
+    rows: [
+      [ 'Popcorn',  '$5.00' ],
+      [ 'Soda',     '$3.00' ],
+      [ 'Candy',    '$2.00' ],
+    ],
+    footer: [ 'Total', '$10.00' ],
+  },
+  {
     type: "text", // 'text' | 'barCode' | 'qrCode' | 'image' | 'table
     value: "---||",
     style: `text-align:right;`,
     css: { "font-size": "12px" },
   },
+  {
+    type: 'text',                                       // 'text' | 'barCode' | 'qrCode' | 'image' | 'table
+    value: 'SAMPLE HEADING',
+    style: `text-align:center;`,
+    css: {"font-weight": "700", "font-size": "18px"}
+ },{
+    type: 'text',                       // 'text' | 'barCode' | 'qrCode' | 'image' | 'table'
+    value: 'Secondary text',
+    style: `text-align:left;color: red;`,
+    css: {"text-decoration": "underline", "font-size": "10px"}
+ },{
+    type: 'barCode',
+    value: 'HB4587896',
+    height: 12,                     // height of barcode, applicable only to bar and QR codes
+    width: 1,                       // width of barcode, applicable only to bar and QR codes
+    displayValue: true,             // Display value below barcode
+    fontsize: 8,
+ },{
+    type: 'DoubleBarCode',
+    value1 : 'HB4587896',
+    value2 : 'HB4587896',
+    height: 12,                     // height of barcode, applicable only to bar and QR codes
+    width: 1,                       // width of barcode, applicable only to bar and QR codes
+    displayValue: true,             // Display value below barcode
+    fontsize: 8,
+    headerText1:'Business Name',    // Optional
+    additionalText1:'Product Name', // Optional
+    footerText1:'MRP: ₹ 200',       // Optional
+    headerText2:'Business Name',    // Optional
+    additionalText2:'Product Name', // Optional
+    footerText2:'MRP: ₹ 400',       // Optional
+    style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+    headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+    itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+    lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+    footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+    headerStyle2:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style  
+    lineStyle2:`margin-top: -8px;font-size:12px;`,                  // Additional text 2 style
+    footerStyle2:`margin-top: -10px;font-size:12px;`,                // Footer text 2 style
+ },{
+    type: 'oneInchDoubleSingleBarCode',
+    value1 : 'HB4587896',
+    height: 12,                     // height of barcode, applicable only to bar and QR codes
+    width: 1,                       // width of barcode, applicable only to bar and QR codes
+    displayValue: true,             // Display value below barcode
+    fontsize: 8,
+    headerText1:'Business Name',    // Optional
+    additionalText1:'Product Name', // Optional
+    footerText1:'MRP: ₹ 200',       // Optional
+    style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+    headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+    itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+    lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+    footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+ },{
+    type: 'oneInchDoubleBarCode',
+    value1 : 'HB4587896',
+    value2 : 'HB4587896',
+    height: 12,                     // height of barcode, applicable only to bar and QR codes
+    width: 1,                       // width of barcode, applicable only to bar and QR codes
+    displayValue: true,             // Display value below barcode
+    fontsize: 8,
+    headerText1:'Business Name',    // Optional
+    additionalText1:'Product Name', // Optional
+    footerText1:'MRP: ₹ 200',       // Optional
+    headerText2:'Business Name',    // Optional
+    additionalText2:'Product Name', // Optional
+    footerText2:'MRP: ₹ 400',       // Optional
+    style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+    headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+    itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+    lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+    footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+    headerStyle2:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style  
+    lineStyle2:`margin-top: -8px;font-size:12px;`,                  // Additional text 2 style
+    footerStyle2:`margin-top: -10px;font-size:12px;`,                // Footer text 2 style
+ },{
+    type: 'SingleBarCode',
+    value1 : 'HB4587896',
+    height: 12,                     // height of barcode, applicable only to bar and QR codes
+    width: 1,                       // width of barcode, applicable only to bar and QR codes
+    displayValue: true,             // Display value below barcode
+    fontsize: 8,
+    headerText1:'Business Name',    // Optional
+    additionalText1:'Product Name', // Optional
+    footerText1:'MRP: ₹ 200',       // Optional
+    style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+    headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+    itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+    lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+    footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+ },{
+    type: 'oneInchBarCode',
+    value1 : 'HB4587896',
+    height: 12,                     // height of barcode, applicable only to bar and QR codes
+    width: 1,                       // width of barcode, applicable only to bar and QR codes
+    displayValue: true,             // Display value below barcode
+    fontsize: 8,
+    headerText1:'Business Name',    // Optional
+    additionalText1:'Product Name', // Optional
+    footerText1:'MRP: ₹ 200',       // Optional
+    style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+    headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+    itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+    lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+    footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+ },{
+   type: 'qrCode',
+    value: 'https://github.com/Hubertformin/electron-pos-printer',
+    height: 55,
+    width: 55,
+    style: 'margin: 10 20px 20 20px'
+  },{
+     type: 'table',
+     // style the table
+     style: 'border: 1px solid #ddd',
+     // list of the columns to be rendered in the table header
+     tableHeader: ['Animal', 'Age'],
+     // multi dimensional array depicting the rows and columns of the table body
+     tableBody: [
+         ['Cat', 2],
+         ['Dog', 4],
+         ['Horse', 12],
+         ['Pig', 4],
+     ],
+     // list of columns to be rendered in the table footer
+     tableFooter: ['Animal', 'Age'],
+     // custom style for the table header
+     tableHeaderStyle: 'background-color: #000; color: white;',
+     // custom style for the table body
+     tableBodyStyle: 'border: 0.5px solid #ddd',
+     // custom style for the table footer
+     tableFooterStyle: 'background-color: #000; color: white;',
+  }
 ];
+
+
+const data1 = [
+  {
+    type: 'image',                                       
+    path: path.join(__dirname, "assets/img_test.png"),     // file path
+    position: 'center',                                  // position of image: 'left' | 'center' | 'right'
+    width: '60px',                                           // width of image in px; default: auto
+    height: '60px',                                          // width of image in px; default: 50 or '50px'
+  },{
+     type: 'text',                                       // 'text' | 'barCode' | 'qrCode' | 'image' | 'table
+     value: 'SAMPLE HEADING',
+     style: `text-align:center;`,
+     css: {"font-weight": "700", "font-size": "18px"}
+  },{
+     type: 'text',                       // 'text' | 'barCode' | 'qrCode' | 'image' | 'table'
+     value: 'Secondary text',
+     style: `text-align:left;color: red;`,
+     css: {"text-decoration": "underline", "font-size": "10px"}
+  },{
+     type: 'barCode',
+     value: 'HB4587896',
+     height: 12,                     // height of barcode, applicable only to bar and QR codes
+     width: 1,                       // width of barcode, applicable only to bar and QR codes
+     displayValue: true,             // Display value below barcode
+     fontsize: 8,
+  },{
+    type: 'qrCode',
+     value: 'https://github.com/Hubertformin/electron-pos-printer',
+     height: 55,
+     width: 55,
+     style: 'margin: 10 20px 20 20px'
+   },{
+      type: 'table',
+      // style the table
+      style: 'border: 1px solid #ddd',
+      // list of the columns to be rendered in the table header
+      tableHeader: ['Animal', 'Age'],
+      // multi dimensional array depicting the rows and columns of the table body
+      tableBody: [
+          ['Cat', 2],
+          ['Dog', 4],
+          ['Horse', 12],
+          ['Pig', 4],
+      ],
+      // list of columns to be rendered in the table footer
+      tableFooter: ['Animal', 'Age'],
+      // custom style for the table header
+      tableHeaderStyle: 'background-color: #000; color: white;',
+      // custom style for the table body
+      tableBodyStyle: 'border: 0.5px solid #ddd',
+      // custom style for the table footer
+      tableFooterStyle: 'background-color: #000; color: white;',
+   },{
+      type: 'table',
+      style: 'border: 1px solid #ddd',             // style the table
+      // list of the columns to be rendered in the table header
+      tableHeader: [{type: 'text', value: 'Animal'}, {type: 'image', path: path.join(__dirname, "assets/img_test.png")}],
+      // multi dimensional array depicting the rows and columns of the table body
+      tableBody: [
+          [{type: 'text', value: 'Cat'}, {type: 'image', path: path.join(__dirname, "assets/img_test.png")}],
+          [{type: 'text', value: 'Dog'}, {type: 'image', path: path.join(__dirname, "assets/img_test.png")}],
+          [{type: 'text', value: 'Horse'}, {type: 'image', path: path.join(__dirname, "assets/img_test.png")}],
+          [{type: 'text', value: 'Pig'}, {type: 'image', path: path.join(__dirname, "assets/img_test.png")}],
+      ],
+      // list of columns to be rendered in the table footer
+      tableFooter: [{type: 'text', value: 'Animal'}, 'Image'],
+      // custom style for the table header
+      tableHeaderStyle: 'background-color: #000; color: white;',
+      // custom style for the table body
+      tableBodyStyle: 'border: 0.5px solid #ddd',
+      // custom style for the table footer
+      tableFooterStyle: 'background-color: #000; color: white;',
+   },
+]
 
 function date() {
   const x = new Date();
@@ -149,6 +376,7 @@ function print() {
     printerName: printerName, // printerName: string, check it at webContent.getPrinters()
     timeOutPerLine: 400,
     silent: true,
+    pageSize: { height: 275000, width: 1200000 }
   };
 
   const now = {
